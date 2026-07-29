@@ -34,7 +34,6 @@
 
 (defalias
   std (layer-switch base)
-
   pad (layer-switch numpad)
   fun (layer-switch funpad)
 
