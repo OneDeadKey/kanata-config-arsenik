@@ -1,18 +1,40 @@
-Arsenik Kanata
+kanata-config-arsenik
 ================================================================================
+
+Reference [Kanata] implementation of the [Arsenik] keymap.
+
+[Kanata]:  https://github.com/jtroo/kanata
+[Arsenik]: https://github.com/OneDeadKey/arsenik
+
+[dl-arsenik]: https://github.com/OneDeadKey/arsenik/releases
+[dl-kanata]:  https://github.com/jtroo/kanata/releases
+
+
+In a Nutshell
+--------------------------------------------------------------------------------
+
+- [Arsenik] is a laptop-first, 33-key keymap that has been designed to work on
+  any keyboard: ANSI, ISO, ergonomic…
+- [Kanata] is a cross-platform Rust application that implements QMK-like
+  features: mod-taps, layers…
+- this repository provides Kanata configuration files to activate Arsenik on
+  your PC or Mac
+
+![base, navigation and sym layers on a 33-key keyboard](arsenik.png)
+
 
 Installation
 --------------------------------------------------------------------------------
 
-- To get Arsenik, check out this repository with Git or
-[download it][Download Arsenik].
-- Launch `kanata.kbd` with Kanata.
-  - You can install Kanata by downloading a
-  [pre-built executable][Download Kanata].
-  - Follow the installation details of your operating system.
+- Get Arsenik:
+  - check out this repository with Git or [download it][dl-arsenik]
+- Get Kanata:
+  - download a [pre-built executable][dl-kanata]
+  - follow the installation details below for your operating system
+- Run `kanata` on `arsenik.kbd`.
 
-<details>
-<summary>Windows</summary>
+
+### Windows
 
 Windows users might prefer to download the `kanata_winIOv2.exe` version as it
 fixes some weird bugs like <kbd>C</kbd> and <kbd>V</kbd> inversion.
@@ -20,16 +42,16 @@ fixes some weird bugs like <kbd>C</kbd> and <kbd>V</kbd> inversion.
 *Note: This tip has been tested for version 1.6.1 of Kanata. In later versions the
 `winIOv2` version might be the default.*
 
-Put the `kanata_winIOv2.exe` in the Kanata Arsenik folder, run it and you’re
+Put the `kanata_winIOv2.exe` in the Arsenik folder, run it and you’re
 good to go!
-</details>
+
+
+### Linux
 
 <details>
-<summary>Linux</summary>
+<summary>Run Kanata without <code>sudo</code></summary>
 
-### Run Kanata without <code>sudo</code>
-
-kanata needs to intercept `uinput` signals, which it cannot do without the
+Kanata needs to intercept `uinput` signals, which it cannot do without the
 proper authorisations.
 
 If you don’t want to run `kanata` with `sudo`, you’ll need to allow Kanata to
@@ -57,8 +79,10 @@ Finally, you need to add a udev rule in `/etc/udev/rules.d/50-kanata.rules`:
 ```udev
 KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
 ```
+</details>
 
-### Making a user-side <code>systemd</code> service for Kanata
+<details>
+<summary>Make a User-Side <code>systemd</code> Service for Kanata</summary>
 
 Note: This only works if `kanata` is able to run without `sudo` (and is using
 `systemd`).
@@ -68,7 +92,7 @@ after logging in. Here is a template for a service file:
 
 ```
 [Unit]
-Description=Kanata keyboard remapper
+Description=kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
@@ -90,15 +114,15 @@ placeholders, then run one of the following commands:
 - `systemctl --user enable kanata.service` so `kanata` may autostart whenever
 the current user logs in
 - `systemctl --user status kanata.service` to check if `kanata` is running
-
 </details>
 
+### macOS
+
 <details>
-<summary> macOS</summary>
+<summary>Karabiner DriverKit Installation</summary>
 
-### Karabiner DriverKit installation
-
-Install the [Karabiner-DriverKit-VirtualHIDDevice](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0). Latest version (v5.0.0) is not working with Kanata.
+Install the [Karabiner-DriverKit-VirtualHIDDevice](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0).
+The latest version (v5.0.0) is not working with Kanata.
 
 To activate it:
 
@@ -139,9 +163,12 @@ _driverkit       26050   0.0  0.0 410598064   2256   ??  Ss    8:02PM   0:00.04 
 root             25744   0.0  0.1 410756464   9872   ??  Ss    8:01PM   0:00.16 /Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon
 ```
 
-### Kanata installation
+</details>
 
-Download Kanata [here](https://github.com/jtroo/kanata/releases/tag/v1.7.0) and save it in a persistent directory.
+<details>
+<summary>Kanata Installation</summary>
+
+[Download Kanata][dl-kanata] and save it in a persistent directory.
 
 Add a sudo rule in `/private/etc/sudoers.d/kanata` where `$USERNAME` is your username:
 
@@ -179,8 +206,4 @@ To start Kanata at the beginning of the session, add a property list file in `~/
 
 In system settings, search Login Items menu and select `sudo` service in *Allow in the Background* list.
 You can restart Kanata with new configuration by disabling and enabling this service.
-
 </details>
-
-[Download Arsenik]: https://github.com/OneDeadKey/arsenik/releases
-[Download Kanata]: https://github.com/jtroo/kanata/releases
