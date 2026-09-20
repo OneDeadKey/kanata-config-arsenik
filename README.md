@@ -6,7 +6,10 @@ Reference [Kanata] implementation of the [Arsenik] keymap.
 [Kanata]:  https://github.com/jtroo/kanata
 [Arsenik]: https://github.com/OneDeadKey/arsenik
 
+<!--  No release yet. Propose a zip archive instead.
 [dl-arsenik]: https://github.com/OneDeadKey/arsenik/releases
+  -->
+[dl-arsenik]: https://github.com/OneDeadKey/kanata-config-arsenik/archive/refs/heads/main.zip
 [dl-kanata]:  https://github.com/jtroo/kanata/releases
 
 
