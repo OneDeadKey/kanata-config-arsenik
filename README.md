@@ -119,13 +119,16 @@ the current user logs in
 - `systemctl --user status kanata.service` to check if `kanata` is running
 </details>
 
+
 ### macOS
 
 <details>
-<summary>Karabiner DriverKit Installation</summary>
+<summary>Prerequisite: Karabiner DriverKit</summary>
 
-Install the [Karabiner-DriverKit-VirtualHIDDevice](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0).
-The latest version (v5.0.0) is not working with Kanata.
+Do not install the latest version. Pick one of these two versions, according to your OS:
+
+- macOS 11 and newer: [Karabiner DriverKit v6.2.0](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v6.2.0).
+- macOS 10 and older: [Karabiner DriverKit v4.3.0](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0).
 
 To activate it:
 
@@ -169,7 +172,7 @@ root             25744   0.0  0.1 410756464   9872   ??  Ss    8:01PM   0:00.16 
 </details>
 
 <details>
-<summary>Kanata Installation</summary>
+<summary>Install Kanata</summary>
 
 [Download Kanata][dl-kanata] and save it in a persistent directory.
 
