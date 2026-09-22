@@ -23,7 +23,7 @@ In a Nutshell
 - this repository provides Kanata configuration files to activate Arsenik on
   your PC or Mac
 
-![base, navigation and sym layers on a 33-key keyboard](arsenik.png)
+![base, navigation and sym layers on a 33-key keyboard](arsenik.svg)
 
 
 Installation
