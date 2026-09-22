@@ -26,6 +26,7 @@
 
 ;;-----------------------------------------------------------------------------
 ;; Keyboard Geometry
+;;-----------------------------------------------------------------------------
 ;; Pick the configuration matching your keyboard:
 ;; ISO (a.k.a. 102/105 keys) or ANSI (a.k.a. 101/104 keys).
 ;; If the key next to the left Shift is `Z`, your keyboard is ANSI.
@@ -36,6 +37,7 @@
 
 ;;-----------------------------------------------------------------------------
 ;; Finger Assignment (angle-mod)
+;;-----------------------------------------------------------------------------
 ;; Angle-mods can be enabled here, i.e. ZXCVB can be shifted to the left.
 ;; More details here: https://colemakmods.github.io/ergonomic-mods/angle.html
 
@@ -45,8 +47,8 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` layer: standard or dual keys? (layer-taps, homerow mods?)
-;; If you just want angle mod, you still have to enable the standard base.
+;; `Base` Layer: standard, layer-taps, homerow mods?
+;;-----------------------------------------------------------------------------
 
 (include deflayer/base.kbd)            ;; standard keyboard behavior
 ;; (include deflayer/base_lt.kbd)         ;; layer-taps on both thumb keys
