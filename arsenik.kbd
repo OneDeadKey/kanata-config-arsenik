@@ -105,7 +105,6 @@
 ;; (include defalias/qwerty-lafayette_pc.kbd)  ;; QWERTY‑Lafayette PC
 ;; (include defalias/ergol_pc.kbd)             ;; Ergo‑L PC
 ;; (include defalias/bepo_pc.kbd)              ;; Bépo PC
-;; (include defalias/optimot_pc.kbd)           ;; Optimot PC
 
 
 ;;-----------------------------------------------------------------------------
