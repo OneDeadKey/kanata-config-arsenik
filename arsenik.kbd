@@ -60,8 +60,8 @@
 
 (include deflayer/base.kbd)            ;; standard keyboard behavior
 ;; (include deflayer/base_lt.kbd)         ;; layer-taps on both thumb keys
-;; (include deflayer/base_lt_hrm_pc.kbd)  ;; layer-taps + homerow mods
-;; (include deflayer/base_lt_hrm_mac.kbd) ;; layer-taps + homerow mods
+;; (include deflayer/base_lt_hrm_pc.kbd)  ;; layer-taps + homerow mods (PC)
+;; (include deflayer/base_lt_hrm_mac.kbd) ;; layer-taps + homerow mods (Mac)
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
