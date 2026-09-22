@@ -1,17 +1,15 @@
 ;;==========================================================================;;
 ;;                                                                          ;;
-;;  With Arsenik, choose the features you want for your keyboard:           ;;
-;;  angle mods, Vim-like navigation layer, Mac/Azerty/Qwertz support, etc.  ;;
+;;  Pick and choose the features you want for your keyboard:                ;;
+;;  angle mod, layer-taps, navigation layer, Mac/Azerty/Qwertz support...   ;;
 ;;                                                                          ;;
 ;;==========================================================================;;
 
-;; Every section is mandatory and should enable one and only one `include`
-;; - enable each feature by un-commenting the related line.
-;; - a commented line starts with ;;
-
-;; Live-reload the configuration with Space+Backspace (requires layer-taps).
+;; Note: if layer-taps are enabled (see the "Base layer" section below),
+;; this configuration can be live-reloaded with Space+Backspace.
 
 ;; Timing variables for tap-hold effects.
+;; (ignored if layer-taps are not enabled)
 (defvar
   ;; The key must be pressed twice in 200ms to enable repetitions.
   tap_timeout 200
@@ -21,79 +19,103 @@
   long_hold_timeout 300
 )
 
-;;-----------------------------------------------------------------------------
-;; Original key arrangement on your keyboard: Mac or PC.
-;; Choose here if you want to add an angle mod: ZXCVB are shifted to the left.
-;; See https://colemakmods.github.io/ergonomic-mods/angle.html for more details.
-;; For wide angle mod, you must pick the arrangement depending on your
-;; keyboard: ISO (a.k.a. 102/105 keys) or ANSI (a.k.a. 101/104 keys).
+;; Every section below should enable one and only one `include` statement.
+;; Enable each feature by un-commenting the related line
+;; (a commented line starts with ;;).
 
-(include defsrc/pc.kbd)  ;; PC, standard finger assignment
-;; (include defsrc/pc_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left (ISO)
-;; (include defsrc/pc_ansi_anglemod.kbd)  ;; PC, ZXCVB are shifted to the left (ANSI)
-;; (include defsrc/pc_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key (ISO)
-;; (include defsrc/pc_ansi_wide_anglemod.kbd)  ;; PC, angle-mod + right hand shifted by one key (ANSI)
-;; (include defsrc/mac.kbd)  ;; Mac, standard finger assignment
-;; (include defsrc/mac_anglemod.kbd)  ;; Mac, ZXCVB are shifted to the left
-;; (include defsrc/mac_ansi_anglemod.kbd)  ;; Mac, ZXCVB are shifted to the left (ANSI)
-;; (include defsrc/mac_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key
+
+;;-----------------------------------------------------------------------------
+;; Finger Assignment (angle-mod)
+;;-----------------------------------------------------------------------------
+;; Angle-mods can be enabled here, i.e. ZXCVB can be shifted to the left.
+;; More details here: https://colemakmods.github.io/ergonomic-mods/angle.html
+;; Pick the configuration matching your keyboard:
+;; ISO (a.k.a. 102/105 keys) or ANSI (a.k.a. 101/104 keys).
+;; If the key next to the left Shift is `Z`, your keyboard is ANSI.
+
+(include defsrc/pc.kbd)                      ;; PC, standard finger assignment
+;; (include defsrc/pc_anglemod.kbd)             ;; PC, ZXCVB are shifted to the left (ISO)
+;; (include defsrc/pc_ansi_anglemod.kbd)        ;; PC, ZXCVB are shifted to the left (ANSI)
+;; (include defsrc/pc_wide_anglemod.kbd)        ;; PC, angle-mod + right hand shifted by one key (ISO)
+;; (include defsrc/pc_ansi_wide_anglemod.kbd)   ;; PC, angle-mod + right hand shifted by one key (ANSI)
+;; (include defsrc/mac.kbd)                     ;; Mac, standard finger assignment
+;; (include defsrc/mac_anglemod.kbd)            ;; Mac, ZXCVB are shifted to the left (ISO)
+;; (include defsrc/mac_ansi_anglemod.kbd)       ;; Mac, ZXCVB are shifted to the left (ANSI)
+;; (include defsrc/mac_wide_anglemod.kbd)       ;; Mac, angle-mod + right hand shifted by one key (ISO)
 ;; (include defsrc/mac_ansi_wide_anglemod.kbd)  ;; Mac, angle-mod + right hand shifted by one key (ANSI)
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` layer: standard or dual keys? (layer-taps, homerow mods?)
-;; If you just want angle mod, you still have to enable the standard base.
+;; `Base` Layer (dual keys)
+;;-----------------------------------------------------------------------------
+;; Dual keys can be enabled here:
+;;  - `lt` (layer-taps):
+;;    - the right thumb key brings the `Symbols` layer
+;;    - a long press on the space bar brings the `Navigation` layer
+;;    - a quick tap on the left/right thumb key makes Backspace/Enter
+;;  - `lt_hrm` (layer-taps + homerow-mods):
+;;    - the left thumb key becomes Shift
+;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
-(include deflayer/base.kbd)  ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)  ;; layer-taps on both thumb keys
-;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
+(include deflayer/base.kbd)         ;; standard keyboard behavior
+;; (include deflayer/base_lt.kbd)      ;; layer-taps on thumb keys
+;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + homerow mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
 
 
 ;;-----------------------------------------------------------------------------
-;; `Symbols` layer
+;; `Symbols` Layer
+;;-----------------------------------------------------------------------------
+;; Available options for the `Symbols` layer:
+;;  - `noop`: the right thumb key acts as AltGr (PC) / Option (Mac)
+;;  - `lafayette`: full symbol layer, inspired by QWERTY-Lafayette and Ergo-L
+;;  - `num`: holding right thumb + left thumb brings a NumRow layer
 
-(include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
-;; (include deflayer/symbols_lafayette.kbd)  ;; AltGr programmation layer like Ergo‑L
-;; (include deflayer/symbols_noop_num.kbd)  ;; AltGr stays as-is + NumRow layers
-;; (include deflayer/symbols_lafayette_num.kbd)  ;; AltGr prog layer + NumRow layers
+(include deflayer/symbols_noop.kbd)           ;; AltGr/Option
+;; (include deflayer/symbols_lafayette.kbd)      ;; prog layer
+;; (include deflayer/symbols_noop_num.kbd)       ;; AltGr/Option + NumRow
+;; (include deflayer/symbols_lafayette_num.kbd)  ;; prog layer + NumRow
 
 
 ;;-----------------------------------------------------------------------------
-;; `Navigation` layer: ESDF or HJKL?
+;; `Navigation` Layer: ESDF or HJKL?
+;;-----------------------------------------------------------------------------
 
-(include deflayer/navigation.kbd)  ;; ESDF on the left, NumPad on the right
-;; (include deflayer/navigation_vim.kbd)  ;; HJKL + NumPad on [Space]+[Q]
+(include deflayer/navigation.kbd)      ;; arrows on ESDF, NumPad under the right hand
+;; (include deflayer/navigation_vim.kbd)  ;; arrows on HJKL, NumPad on [Space]+[Q]
 
 ;; Replace XX by the keyboard shortcut of your application launcher, if any.
 ;; Mapped on [Space]+[P] in both navigation layers.
 
-;; (defalias run M-p)  ;; [Command]-[P]
 (defalias run XX)  ;; do nothing
+;; (defalias run M-p)  ;; [Command]-[P]
 
 
 ;;-----------------------------------------------------------------------------
-;; Aliases for `Symbols` and `Navigation` layers
-;; Depends on PC/Mac and keyboard layout
+;; Aliases for `Symbols` and `Navigation` Layers
+;;-----------------------------------------------------------------------------
+;; Symbols and shortcuts in the Navigation layer depend on the keyboard layout
+;; and host type (PC/Mac). Pick your aliases accordingly.
 
-(include defalias/ergol_pc.kbd)  ;; Ergo‑L PC
-;; (include defalias/qwerty-lafayette_pc.kbd)  ;; Qwerty‑Lafayette PC
-;; (include defalias/qwerty_pc.kbd)  ;; Qwerty / Colemak PC
-;; (include defalias/qwerty_mac.kbd)  ;; Qwerty / Colemak Mac
-;; (include defalias/azerty_pc.kbd)  ;; Azerty PC
-;; (include defalias/qwertz_pc.kbd)  ;; Qwertz PC
-;; (include defalias/bepo_pc.kbd)  ;; Bépo PC
-;; (include defalias/optimot_pc.kbd)  ;; Optimot PC
+(include defalias/qwerty_pc.kbd)            ;; QWERTY/Colemak PC
+;; (include defalias/qwerty_mac.kbd)           ;; QWERTY/Colemak Mac
+;; (include defalias/azerty_pc.kbd)            ;; AZERTY PC
+;; (include defalias/qwertz_pc.kbd)            ;; QWERTZ PC
+;; (include defalias/qwerty-lafayette_pc.kbd)  ;; QWERTY‑Lafayette PC
+;; (include defalias/ergol_pc.kbd)             ;; Ergo‑L PC
+;; (include defalias/bepo_pc.kbd)              ;; Bépo PC
+;; (include defalias/optimot_pc.kbd)           ;; Optimot PC
+
 
 ;;-----------------------------------------------------------------------------
-;; Extra configuration
-;; You should not modify this, only if you need to.
+;; Extra Configuration
+;;-----------------------------------------------------------------------------
 
 (defcfg
-  ;; Enabled makes kanata process keys that are not defined in defsrc
-  ;; Fixes altgr for Windows (see Arsenik issue #22)
+  ;; Allow Kanata to process keys that are not defined in defsrc
   process-unmapped-keys yes
+  ;; Fixes the AltGr/Symbols on Windows (see Arsenik issue #22)
   windows-altgr cancel-lctl-press
 )
 
