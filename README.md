@@ -93,7 +93,7 @@ Note: This only works if `kanata` is able to run without `sudo` (and is using
 Using a `systemd service` allows running `kanata` as a daemon, possibly right
 after logging in. Here is a template for a service file:
 
-```
+```properties
 [Unit]
 Description=kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
@@ -119,13 +119,16 @@ the current user logs in
 - `systemctl --user status kanata.service` to check if `kanata` is running
 </details>
 
+
 ### macOS
 
 <details>
-<summary>Karabiner DriverKit Installation</summary>
+<summary>Prerequisite: Karabiner DriverKit</summary>
 
-Install the [Karabiner-DriverKit-VirtualHIDDevice](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0).
-The latest version (v5.0.0) is not working with Kanata.
+Do not install the latest version. Pick one of these two versions, according to your OS:
+
+- macOS 11 and newer: [Karabiner DriverKit v6.2.0](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v6.2.0)
+- macOS 10 and older: [Karabiner DriverKit v4.3.0](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v4.3.0)
 
 To activate it:
 
@@ -137,7 +140,7 @@ You may have to allow Kanata execution in the Privacy & Security panel from macO
 
 As root, add the following content in `/Library/LaunchDaemons/org.pqrs.service.daemon.Karabiner-VirtualHIDDevice-Daemon.plist` file:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -169,19 +172,19 @@ root             25744   0.0  0.1 410756464   9872   ??  Ss    8:01PM   0:00.16 
 </details>
 
 <details>
-<summary>Kanata Installation</summary>
+<summary>Install Kanata</summary>
 
 [Download Kanata][dl-kanata] and save it in a persistent directory.
 
 Add a sudo rule in `/private/etc/sudoers.d/kanata` where `$USERNAME` is your username:
 
-```
+```bash
 $USERNAME ALL=(ALL) NOPASSWD: /path/to/kanata/binary/kanata
 ```
 
 To start Kanata at the beginning of the session, add a property list file in `~/Library/LaunchAgents/com.jtroo.kanata.plist` with the following content:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
