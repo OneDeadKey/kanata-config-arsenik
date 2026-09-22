@@ -47,8 +47,16 @@
 
 
 ;;-----------------------------------------------------------------------------
-;; `Base` Layer: standard, layer-taps, homerow mods?
+;; `Base` Layer (dual keys)
 ;;-----------------------------------------------------------------------------
+;; Dual keys can be enabled here:
+;;  - `lt` (layer-taps):
+;;    - the right thumb key brings the `Symbols` layer
+;;    - a long press on the space bar brings the `Navigation` layer
+;;    - a quick tap on the left/right thumb key makes Backspace/Enter
+;;  - `lt_hrm` (layer-taps + homerow-mods):
+;;    - the left thumb key becomes Shift
+;;    - SDF/JKL become Meta/Ctrl/Alt when held
 
 (include deflayer/base.kbd)            ;; standard keyboard behavior
 ;; (include deflayer/base_lt.kbd)         ;; layer-taps on both thumb keys
