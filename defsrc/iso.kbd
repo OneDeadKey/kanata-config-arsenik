@@ -1,0 +1,32 @@
+;; Platform-specific Keys (ISO)
+;; lbot = bottom-left key = ISO key = angle-mod substitution key
+
+(deflocalkeys-linux
+  LeftThumb   56 ;; LeftAlt
+  RightThumb 100 ;; RightAlt
+  lbot        86
+)
+
+(deflocalkeys-macos
+  LeftThumb  125 ;; LeftCommand
+  RightThumb 126 ;; RightCommand
+  lbot        41
+)
+
+(deflocalkeys-win
+  LeftThumb  164 ;; LeftAlt
+  RightThumb 165 ;; RightAlt
+  lbot       226
+)
+(deflocalkeys-winiov2
+  LeftThumb  164 ;; LeftAlt
+  RightThumb 165 ;; RightAlt
+  lbot       226
+)
+(deflocalkeys-wintercept ;; XXX: untested
+  LeftThumb  164 ;; LeftAlt
+  RightThumb 165 ;; RightAlt
+  lbot       226
+)
+
+;; vim: set ft=lisp:
