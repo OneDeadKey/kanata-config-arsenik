@@ -31,10 +31,23 @@ Installation
 
 - Get Arsenik:
   - check out this repository with Git or [download it][dl-arsenik]
+  - **configure `kanata.kbd`**: by default, Arsenik does nothing,
+    all features have to be enabled on an opt-in basis.
 - Get Kanata:
   - download a [pre-built executable][dl-kanata]
-  - follow the installation details below for your operating system
-- Run `kanata` on `arsenik.kbd`.
+  - unzip it into the Arsenik folder
+- Run Kanata.
+
+> [!TIP]
+> All `*custom*.kbd` files are git-ignored. Git users probably want to put
+> their configuration in a `/custom.kbd` file, and pass it as an argument to
+> Kanata:
+
+```sh
+./kanata --cfg custom.kbd
+```
+
+See OS-specific instructions below.
 
 
 ### Windows
