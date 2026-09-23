@@ -1,2 +1,4 @@
 kanata*.exe
-custom*.kbd
+kanata_linux*
+kanata_macos*
+*custom*.kbd
