@@ -26,7 +26,7 @@ In a Nutshell
 ![base, navigation and sym layers on a 33-key keyboard](arsenik.svg)
 
 
-Installation
+Usage
 --------------------------------------------------------------------------------
 
 - Get Arsenik:
@@ -52,15 +52,10 @@ See OS-specific instructions below.
 
 ### Windows
 
-Windows users might prefer to download the `kanata_winIOv2.exe` version as it
-fixes some weird bugs like <kbd>C</kbd> and <kbd>V</kbd> inversion.
-
-*Note: This tip has been tested for version 1.6.1 of Kanata. In later versions the
-`winIOv2` version might be the default.*
-
-Put the `kanata_winIOv2.exe` in the Arsenik folder, run it and you’re
-good to go!
-
+There are several Kanata variants for Windows. We recommend using
+`kanata_windows_gui_winIOv2_[arch].exe`: put it in the Arsenik folder, start it
+(double-click), and Kanata will run in the background. It can be reloaded or
+exited with a right-click on its systray icon.
 
 ### Linux
 
@@ -145,13 +140,20 @@ Do not install the latest version. Pick one of these two versions, according to 
 
 To activate it:
 
-```
+```sh
 /Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate
 ```
 
-You may have to allow Kanata execution in the Privacy & Security panel from macOS settings.
+You may have to allow Kanata’s execution in the *“Privacy & Security”* panel,
+from the system settings.
 
-As root, add the following content in `/Library/LaunchDaemons/org.pqrs.service.daemon.Karabiner-VirtualHIDDevice-Daemon.plist` file:
+As root, create this file:
+
+```
+/Library/LaunchDaemons/org.pqrs.service.daemon.Karabiner-VirtualHIDDevice-Daemon.plist
+```
+
+with the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -176,8 +178,11 @@ A new item *Fumihiko Takayama* will be added in System Settings > Login Items.
 
 Two Karabiner processes should be started:
 
+```sh
+ps aux | grep -i karabiner
 ```
-sh-3.2# ps aux | grep -i karabiner | grep -v grep
+
+```
 _driverkit       26050   0.0  0.0 410598064   2256   ??  Ss    8:02PM   0:00.04 /Library/SystemExtensions/.../org.pqrs.Karabiner-DriverKit-VirtualHIDDevice.dext/org.pqrs.Karabiner-DriverKit-VirtualHIDDevice org.pqrs.Karabiner-DriverKit-VirtualHIDDevice 0x10002b929 org.pqrs.Karabiner-DriverKit-VirtualHIDDevice
 root             25744   0.0  0.1 410756464   9872   ??  Ss    8:01PM   0:00.16 /Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon
 ```
@@ -185,33 +190,38 @@ root             25744   0.0  0.1 410756464   9872   ??  Ss    8:01PM   0:00.16 
 </details>
 
 <details>
-<summary>Install Kanata</summary>
+<summary>Run Kanata at startup</summary>
 
-[Download Kanata][dl-kanata] and save it in a persistent directory.
-
-Add a sudo rule in `/private/etc/sudoers.d/kanata` where `$USERNAME` is your username:
+Add a sudo rule in `/private/etc/sudoers.d/kanata`
+(where `$USERNAME` is your username):
 
 ```bash
 $USERNAME ALL=(ALL) NOPASSWD: /path/to/kanata/binary/kanata
 ```
 
-To start Kanata at the beginning of the session, add a property list file in `~/Library/LaunchAgents/com.jtroo.kanata.plist` with the following content:
+To start Kanata at the beginning of the session, create this file:
+
+```
+~/Library/LaunchAgents/com.jtroo.kanata.plist
+```
+
+with the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+  <dict>
     <key>Label</key>
     <string>com.jtroo.kanata</string>
 
     <key>ProgramArguments</key>
     <array>
-        <string>sudo</string>
-        <string>/path/to/kanata/binary/kanata</string>
-        <string>--cfg</string>
-        <string>/path/to/kanata/config/file</string>
-        <string>-n</string>
+      <string>sudo</string>
+      <string>/path/to/kanata/binary/kanata</string>
+      <string>--cfg</string>
+      <string>/path/to/kanata/config/file</string>
+      <string>-n</string>
     </array>
 
     <key>RunAtLoad</key>
@@ -219,10 +229,11 @@ To start Kanata at the beginning of the session, add a property list file in `~/
 
     <key>KeepAlive</key>
     <true/>
-</dict>
+  </dict>
 </plist>
 ```
 
-In system settings, search Login Items menu and select `sudo` service in *Allow in the Background* list.
-You can restart Kanata with new configuration by disabling and enabling this service.
+In the system settings, look for the *“Login Items”* menu and select the `sudo`
+service in the *“Allow in the Background”* list.
+Reload Kanata’s configuration by disabling and re-enabling this service.
 </details>
