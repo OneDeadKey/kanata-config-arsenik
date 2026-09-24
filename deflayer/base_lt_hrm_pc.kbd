@@ -12,20 +12,20 @@
 
 (defalias
   ;; Main mod-tap: Nav layer when held, Space when tapped.
-  nav (tap-hold $tap_timeout $long_hold_timeout spc (layer-while-held navigation))
+  nav (tap-hold $QUICK_TAP $TAPPING_TERM spc (layer-while-held navigation))
 
   ;; Space-cadet thumb keys: Shift/BackSpace, AltGr/Enter.
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
-  sft (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
-  sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+  sft (tap-hold-press $QUICK_TAP $HOLDING_TERM bspc lsft)
+  sym (tap-hold-press $QUICK_TAP $HOLDING_TERM ret (layer-while-held symbols))
 
   ;; Home-row mods
-  ss (tap-hold $tap_timeout $long_hold_timeout s lmet)
-  dd (tap-hold $tap_timeout $long_hold_timeout d lctl)
-  ff (tap-hold $tap_timeout $long_hold_timeout f lalt)
-  jj (tap-hold $tap_timeout $long_hold_timeout j lalt)
-  kk (tap-hold $tap_timeout $long_hold_timeout k rctl)
-  ll (tap-hold $tap_timeout $long_hold_timeout l rmet)
+  ss (tap-hold $QUICK_TAP $TAPPING_TERM s lmet)
+  dd (tap-hold $QUICK_TAP $TAPPING_TERM d lctl)
+  ff (tap-hold $QUICK_TAP $TAPPING_TERM f lalt)
+  jj (tap-hold $QUICK_TAP $TAPPING_TERM j lalt)
+  kk (tap-hold $QUICK_TAP $TAPPING_TERM k rctl)
+  ll (tap-hold $QUICK_TAP $TAPPING_TERM l rmet)
 )
 
 ;; vim: set ft=lisp:
