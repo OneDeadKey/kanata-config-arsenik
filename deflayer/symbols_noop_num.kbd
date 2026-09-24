@@ -24,7 +24,7 @@
 
 (defalias
   ;; NumRow on hold, Esc on tap
-  num (tap-hold-press $tap_timeout $hold_timeout esc (layer-while-held numrow))
+  num (tap-hold-press $QUICK_TAP $HOLDING_TERM esc (layer-while-held numrow))
 )
 
 ;; vim: set ft=lisp:
