@@ -87,12 +87,6 @@
 (include deflayer/navigation.kbd)      ;; arrows on ESDF, NumPad under the right hand
 ;; (include deflayer/navigation_vim.kbd)  ;; arrows on HJKL, NumPad on [Space]+[Q]
 
-;; Replace XX by the keyboard shortcut of your application launcher, if any.
-;; Mapped on [Space]+[P] in both navigation layers.
-
-(defalias run XX)  ;; do nothing
-;; (defalias run M-p)  ;; [Command]-[P]
-
 
 ;;-----------------------------------------------------------------------------
 ;; Aliases for `Symbols` and `Navigation` Layers
