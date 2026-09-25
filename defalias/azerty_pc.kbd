@@ -78,11 +78,11 @@
   s9 9
   nbs (unicode  ) ;; narrow non-break space
 
-  dk1 XX
-  dk2 XX
-  dk3 XX
-  dk4 XX
-  dk5 XX
+  l1 XX
+  l2 XX
+  l3 XX
+  l4 XX
+  l5 XX
 )
 
 ;; vim: set ft=lisp:

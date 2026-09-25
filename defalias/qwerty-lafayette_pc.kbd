@@ -77,13 +77,11 @@
   s9 S-9
   nbs S-spc ;; narrow no-break space
 
-  1dk ;
-  ;; digits must be escaped, otherwise they’re interpreted as delays in ms
-  dk1 (macro @1dk @1)
-  dk2 (macro @1dk @2)
-  dk3 (macro @1dk @3)
-  dk4 (macro @1dk @4)
-  dk5 (macro @1dk @5)
+  l1 (macro ; @1)  ;; 1dk 1
+  l2 (macro ; @2)  ;; 1dk 2
+  l3 (macro ; @3)  ;; 1dk 3
+  l4 (macro ; @4)  ;; 1dk 4
+  l5 (macro ; @5)  ;; 1dk 5
 )
 
 ;; vim: set ft=lisp:
