@@ -38,7 +38,8 @@
     }
 
     .dual { transform: translateY(26px); }
-    .dual, .mod .dual, .mod rect.mod{ fill: #f4f4f4; }
+    .mod rect.mod { fill: #f4f4f4; }
+
     .dual, .hrm { display: none; }
 
     text.hrm,
@@ -46,9 +47,8 @@
     text.sym  { fill: #66f; }
     text.nav  { fill: #e83; }
     use.nav { stroke: #e83; }
-
-    .nav rect.mod { fill: #e83; }
-    .nav text.mod { fill: brown; }
+    .nav rect.mod { stroke: #e83; stroke-width: 1px; }
+         rect.hrm { stroke: #444; stroke-width: 1px; }
     .sym rect.mod { fill: #77d; }
     .sym text.mod { fill: navy; }
 
@@ -58,13 +58,11 @@
       .specialKey rect { fill: #333; }
       rect             { fill: #444; }
       text             { fill: #bbb; }
-      use            { stroke: #bbb; }
+      use, rect.hrm  { stroke: #bbb; }
       text.hrm,
       text.mod         { fill: #eee; }
       text.sym         { fill: #99f; }
-      .dual,
-      .mod rect.mod,
-      .mod .dual       { fill: #666; }
+      .mod rect.mod    { fill: #666; }
     }
 
     .left  { transform: translateX(  4px); }
@@ -159,7 +157,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">S</text>
         <text x="12.8" y="43.4" class="hrm">⌥</text>
         <text x="38.0" y="20.6" class="sym">(</text>
@@ -185,7 +183,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">D</text>
         <text x="12.8" y="43.4" class="hrm">⌘</text>
         <text x="38.0" y="20.6" class="sym">)</text>
@@ -211,7 +209,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">F</text>
         <text x="12.8" y="43.4" class="hrm">⌃</text>
         <text x="38.0" y="20.6" class="sym">}</text>
@@ -280,7 +278,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">J</text>
         <text x="12.8" y="43.4" class="hrm">⌃</text>
         <text x="38.0" y="20.6" class="sym">+</text>
@@ -303,7 +301,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">K</text>
         <text x="12.8" y="43.4" class="hrm">⌘</text>
         <text x="38.0" y="20.6" class="sym">-</text>
@@ -327,7 +325,7 @@
       </g>
       <g class="row_2">
         <rect width="52" height="52" rx="5" ry="5"/>
-        <rect width="26" height="26" rx="2" ry="2" class="dual"/>
+        <rect width="26" height="26" rx="2" ry="2" class="dual hrm"/>
         <text x="12.8" y="20.6" class="level2">L</text>
         <text x="12.8" y="43.4" class="hrm">⌥</text>
         <text x="38.0" y="20.6" class="sym">/</text>
@@ -380,7 +378,7 @@
     <g>
       <rect width="232" height="52" rx="5" ry="5"/>
       <rect width="41"  height="26" rx="2" ry="2" class="dual mod"/>
-      <text x="20.5" y="43.4" class="mod">nav</text>
+      <text x="20.5" y="43.4" class="nav">nav</text>
       <use  x="20.5" y="18.6" class="level2" href="#glyph_space"/>
     </g>
   </g>
