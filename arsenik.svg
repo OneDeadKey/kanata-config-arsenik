@@ -40,8 +40,6 @@
     .dual { transform: translateY(26px); }
     .mod rect.mod { fill: #f4f4f4; }
 
-    .dual, .hrm { display: none; }
-
     text.hrm,
     text.mod  { fill: #333; }
     text.sym  { fill: #66f; }
@@ -72,17 +70,11 @@
     .row_2 { transform: translateY( 60px); }
     .row_3 { transform: translateY(120px); }
 
-    .col_1 { transform: translateX(  0px); }
-    .col_2 { transform: translateX( 60px); }
-    .col_3 { transform: translateX(120px); }
-    .col_4 { transform: translateX(180px); }
-    .col_5 { transform: translateX(240px); }
-
-    .col_6 { transform: translateX(  0px); }
-    .col_7 { transform: translateX( 60px); }
-    .col_8 { transform: translateX(120px); }
-    .col_9 { transform: translateX(180px); }
-    .col_0 { transform: translateX(240px); }
+    .col_1, .col_6 { transform: translateX(  0px); }
+    .col_2, .col_7 { transform: translateX( 60px); }
+    .col_3, .col_8 { transform: translateX(120px); }
+    .col_4, .col_9 { transform: translateX(180px); }
+    .col_5, .col_0 { transform: translateX(240px); }
 
     .thb_left  { transform: translate(110px, 195px); }
     .thb_space { transform: translate(200px, 195px); }
@@ -95,8 +87,6 @@
     .thb_6 { transform: translate(  0px, 195px); }
     .thb_7 { transform: translate( 60px, 195px); }
     .thb_8 { transform: translate(120px, 195px); }
-
-    .dual, .hrm { display: block; }
   ]]></style>
 
   <defs>
