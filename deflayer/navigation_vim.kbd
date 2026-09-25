@@ -9,9 +9,9 @@
 (deflayer navigation
   f1   f2   f3   f4   f5  lrld  f6   f7   f8   f9   f10  f11  f12
   @pad @cls bck  fwd  XX        home pgdn pgup end  XX
-  @all @sav S-tab tab XX        lft  down up   rght @fun
+  @all @sav S-tab tab XX        lft  down up   rght XX
   @ndo @cut @cpy @pst XX    _   @mwl @mwd @mwu @mwr XX
-            del             _             esc
+            del             _             @fun
 )
 
 ;; NumPad
@@ -32,19 +32,9 @@
             _              @nbs           @sym
 )
 
-;; function keys
-(deflayer funpad
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    _    _
-  f1   f2   f3   f4   XX        XX   XX   XX   XX   XX
-  f5   f6   f7   f8   XX        XX   lalt lctl lmet _
-  f9   f10  f11  f12  XX   XX   XX   XX   XX   XX   XX
-            @std           _              @std
-)
-
 (defalias
   std (layer-switch base)
   pad (layer-switch numpad)
-  fun (layer-switch funpad)
 
   ;; Mouse wheel emulation
   mwu (mwheel-up    50 120)
