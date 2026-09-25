@@ -1,16 +1,25 @@
-;; Qwerty/Colemak Windows/Linux aliases
+;; Qwerty/Colemak aliases
 ;; Works with QWERTY-US, Colemak and others.
 
 ;; Navigation layer
-(defalias
-
+(platform (macos) (defalias
+  all M-a
+  sav M-s
+  ndo M-z
+  cut M-x
+  cpy M-c
+  pst M-v
+))
+(platform (linux win winiov2 wintercept) (defalias
   all C-a
   sav C-s
-  cls C-w
   ndo C-z
   cut C-x
   cpy C-c
   pst C-v
+))
+(defalias
+  cls C-w
 
   0 0
   1 1

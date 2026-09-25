@@ -1,15 +1,24 @@
-;; Bépo Windows/Linux aliases
+;; Bépo aliases
 
 ;; Navigation layer
-(defalias
-
+(platform (macos) (defalias
+  all M-a
+  sav M-k
+  ndo M-[
+  cut M-c
+  cpy M-h
+  pst M-u
+))
+(platform (linux win winiov2 wintercept) (defalias
   all C-a
   sav C-k
-  cls C-]
   ndo C-[
   cut C-c
   cpy C-h
   pst C-u
+))
+(defalias
+  cls C-]
 
   0 S-0
   1 S-1
