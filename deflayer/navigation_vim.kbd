@@ -1,7 +1,7 @@
 ;; Vim-Navigation layer:
 ;;  - right: Vim-like arrows on HJKL, home/end page up/down, mouse scroll
 ;;  - left: one-hand shortcuts (Cmd/Ctrl-WASZXCV), Tab/Shift-Tab, prev/next
-;;  - top: Super-num (i3/sway) or Alt-num (browser), zoom in/out
+;;  - top: function keys
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
 ;; except for linux-dev, i.e. you cannot live reload and switch keyboard devices.
@@ -21,6 +21,15 @@
   XX   lft  down rght pgdn      @-   @4   @5   @6   @0
   XX   XX   XX   XX   XX    _   @,   @1   @2   @3   @.
             @std           @nbs           @std
+)
+
+;; NumRow
+(deflayer numbers
+  _    _    _    _    _     _   _    _    _    _    _    _    _
+  @s1  @s2  @s3  @s4  @s5       @s6  @s7  @s8  @s9  @s0
+  @1   @2   @3   @4   @5        @6   @7   @8   @9   @0
+  @dk1 @dk2 @dk3 @dk4 @dk5  _   XX   @-   @,   @.   @/
+            _              @nbs           @sym
 )
 
 ;; function keys

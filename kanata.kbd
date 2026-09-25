@@ -76,15 +76,13 @@
 ;;-----------------------------------------------------------------------------
 ;; `Symbols` Layer
 ;;-----------------------------------------------------------------------------
-;; Available options for the `Symbols` layer:
-;;  - `noop`: the right thumb key acts as AltGr (PC) / Option (Mac)
-;;  - `lafayette`: full symbol layer, inspired by QWERTY-Lafayette and Ergo-L
-;;  - `num`: holding right thumb + left thumb brings a NumRow layer
+;;  - by default, the right thumb key brings a `Symbols` layer
+;;  - with the `altgr` variant, the right thumb key becomes AltGr/Option
+;;  - holding right + left thumb keys brings a `Numbers` layer
+;;    (= NumPad or NumRow, depending on the selected `Navigation` layer)
 
-(include deflayer/symbols_noop.kbd)           ;; AltGr/Option
-;; (include deflayer/symbols_lafayette.kbd)      ;; prog layer
-;; (include deflayer/symbols_noop_num.kbd)       ;; AltGr/Option + NumRow
-;; (include deflayer/symbols_lafayette_num.kbd)  ;; prog layer + NumRow
+(include deflayer/symbols.kbd)        ;; programming symbols
+;; (include deflayer/symbols_altgr.kbd)  ;; AltGr/Option layer
 
 
 ;;-----------------------------------------------------------------------------
