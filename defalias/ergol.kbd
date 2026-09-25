@@ -1,15 +1,24 @@
-;; Qwerty‑Lafayette Windows/Linux aliases
+;; Ergo‑L aliases
 
 ;; Navigation layer
-(defalias
-
+(platform (macos) (defalias
+  all M-a
+  sav M-s
+  ndo M-z
+  cut M-x
+  cpy M-w
+  pst M-v
+))
+(platform (linux win winiov2 wintercept) (defalias
   all C-a
   sav C-s
-  cls C-w
   ndo C-z
   cut C-x
-  cpy C-c
+  cpy C-w
   pst C-v
+))
+(defalias
+  cls C-t
 
   0 0
   1 1
@@ -21,8 +30,8 @@
   7 7
   8 8
   9 9
-  , ,
-  . .
+  , .
+  . n
 )
 
 ;; Symbols layer
@@ -77,11 +86,11 @@
   s9 S-9
   nbs S-spc ;; narrow no-break space
 
-  l1 (macro ; @1)  ;; 1dk 1
-  l2 (macro ; @2)  ;; 1dk 2
-  l3 (macro ; @3)  ;; 1dk 3
-  l4 (macro ; @4)  ;; 1dk 4
-  l5 (macro ; @5)  ;; 1dk 5
+  l1 (macro o @1)  ;; 1dk 1
+  l2 (macro o @2)  ;; 1dk 2
+  l3 (macro o @3)  ;; 1dk 3
+  l4 (macro o @4)  ;; 1dk 4
+  l5 (macro o @5)  ;; 1dk 5
 )
 
 ;; vim: set ft=lisp:

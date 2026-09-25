@@ -1,16 +1,25 @@
-;; Azerty Windows/Linux aliases
+;; Azerty aliases
 ;; Works with AZERTY-fr. Needs a couple tweaks for the Belgian and Mac variants.
 
 ;; Navigation layer
-(defalias
-
+(platform (macos) (defalias
+  all M-q
+  sav M-s
+  ndo M-w
+  cut M-x
+  cpy M-c
+  pst M-v
+))
+(platform (linux win winiov2 wintercept) (defalias
   all C-q
   sav C-s
-  cls C-z
   ndo C-w
   cut C-x
   cpy C-c
   pst C-v
+))
+(defalias
+  cls C-z
 
   0 S-0
   1 S-1

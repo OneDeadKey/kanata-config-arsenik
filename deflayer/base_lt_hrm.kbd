@@ -20,12 +20,12 @@
   sym (tap-hold-press $QUICK_TAP $HOLDING_TERM ret (layer-while-held symbols))
 
   ;; Home-row mods
-  ss (tap-hold $QUICK_TAP $TAPPING_TERM s lopt)
-  dd (tap-hold $QUICK_TAP $TAPPING_TERM d lcmd)
-  ff (tap-hold $QUICK_TAP $TAPPING_TERM f lctl)
-  jj (tap-hold $QUICK_TAP $TAPPING_TERM j rctl)
-  kk (tap-hold $QUICK_TAP $TAPPING_TERM k rcmd)
-  ll (tap-hold $QUICK_TAP $TAPPING_TERM l lopt)
+  ss (tap-hold $QUICK_TAP $TAPPING_TERM s $HM3)
+  dd (tap-hold $QUICK_TAP $TAPPING_TERM d $HM2)
+  ff (tap-hold $QUICK_TAP $TAPPING_TERM f $HM1)
+  jj (tap-hold $QUICK_TAP $TAPPING_TERM j $HM1)
+  kk (tap-hold $QUICK_TAP $TAPPING_TERM k $HM2)
+  ll (tap-hold $QUICK_TAP $TAPPING_TERM l $HM3)
 )
 
 ;; vim: set ft=lisp:
