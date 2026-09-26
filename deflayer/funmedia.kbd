@@ -1,0 +1,32 @@
+;; fn/media layer
+;;  - F1..F12 under the left hand
+;;  - media keys under the right hand
+
+(deflayer funmedia
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  f1   f2   f3   f4   XX        XX   prev @v+  @b+  XX
+  f5   f6   f7   f8   XX        XX   @t0  @v0  @b0  prtsc
+  f9   f10  f11  f12  XX   XX   XX   next @v-  @b-  XX
+            _              _              _
+)
+
+(defalias
+  ;; This should be a simple layer-shift, but Esc is kept on tap to be
+  ;; forward-compatible with the previous spec. This will be deprecated.
+  ;; fun (layer-while-held funmedia)
+  fun (tap-hold-press $QUICK_TAP $HOLDING_TERM esc (layer-while-held funmedia))
+
+  ;; media keys -- identifiers found in the `str_to_cscode` function:
+  ;; https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs#L175
+  v+ VolumeUp
+  v- VolumeDown
+  b+ brup
+  b- brdown
+
+  ;; Homerow mods are always enabled in this layer
+  t0 (tap-hold $QUICK_TAP $TAPPING_TERM pp   $HM1)
+  v0 (tap-hold $QUICK_TAP $TAPPING_TERM mute $HM2)
+  b0 $HM3
+)
+
+;; vim: set ft=lisp:
