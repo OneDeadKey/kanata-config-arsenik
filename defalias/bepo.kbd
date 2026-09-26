@@ -8,6 +8,7 @@
   cut M-c
   cpy M-h
   pst M-u
+  rdo M-x
 ))
 (platform (linux win winiov2 wintercept) (defalias
   all C-a
@@ -16,6 +17,7 @@
   cut C-c
   cpy C-h
   pst C-u
+  rdo C-x
 ))
 (defalias
   cls C-]
