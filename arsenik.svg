@@ -26,11 +26,9 @@
       stroke: #444;
     }
 
-    .specialKey rect  { fill: #e4e4e4; }
-    .specialKey text  { font-size: 14px; }
-    .specialKey .shortcut,
-    .shortcut         { font-size: 11px; }
+    .specialKey text,
     .mod, .hrm, .func { font-size: 14px; }
+    .shortcut         { font-size: 11px; }
 
     .func {
       transform: translateX(-1px);
@@ -38,7 +36,7 @@
     }
 
     .dual { transform: translateY(26px); }
-    .mod rect.mod { fill: #f4f4f4; }
+    .mod rect.mod { fill: #ddd; }
 
     text.hrm,
     text.mod  { fill: #333; }
@@ -48,20 +46,20 @@
     use.nav { stroke: #e83; }
     .nav rect.mod { stroke: #e83; stroke-width: 1px; }
          rect.hrm { stroke: #444; stroke-width: 1px; }
-    .sym rect.mod { fill: #77d; }
+    .sym rect.mod { fill: #aaf; }
     .sym text.mod { fill: navy; }
 
     .level1, .level2 { opacity: 0.8; }
 
     @media (prefers-color-scheme: dark) {
-      .specialKey rect { fill: #333; }
-      rect             { fill: #444; }
+      rect             { fill: #333; }
       text             { fill: #bbb; }
       use, rect.hrm  { stroke: #bbb; }
       text.hrm,
       text.mod         { fill: #eee; }
       text.sym         { fill: #99f; }
       use.sym        { stroke: #99f; }
+      .sym rect.mod    { fill: #77d; }
       .mod rect.mod    { fill: #666; }
     }
 
